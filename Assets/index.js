@@ -5,6 +5,7 @@ const fs = require('fs');
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern")
+const Employee = require("./lib/employee")
 
 let teamArray = [];
 
@@ -47,28 +48,32 @@ const addEngineer = () => {
         {
             type: 'input',
             message: "What is the engineer's name?",
-            name: "engineer name",
+            name: "name",
             validate: (engineerNameInput) => { if (engineerNameInput) { return true } else { return 'Engineer name is needed.' } },
         },
         {
             type: 'input',
             message: "What is the Engineer's employee ID?",
-            name: "engineer ID",
+            name: "id",
             validate: (engineerIdInput) => { if (engineerIdInput) { return true } else { return 'Engineer ID is needed.' } },
         },
         {
             type: 'input',
             message: "What is the Engineer's email address?",
-            name: "engineer email",
+            name: "email",
             validate: (engineerEmailInput) => { if (engineerEmailInput) { return true } else { return 'Engineer email is needed.' } },
         },
         {
             type: 'input',
-            message: "What is the Engineer's office number",
-            name: "engineer office number",
-            validate: (engineerONumberInput) => { if (engineerONumberInput) { return true } else { return 'Engineer office number is needed.' } },
+            message: "What is the Engineer's Github username?",
+            name: "github",
+            validate: (engineerGithubInput) => { if (engineerGithubInput) { return true } else { return 'Engineer Github address is needed.' } },
         },
-    ])
+    ]).then(({ name, id, email, github }) => {
+        const newEngineer = new Engineer(name, id, email, github)
+        teamArray.push(newEngineer)
+
+    })
 }
 
 const addIntern = () => {
@@ -76,26 +81,30 @@ const addIntern = () => {
         {
             type: 'input',
             message: "What is the intern's name?",
-            name: "intern name",
+            name: "name",
             validate: (internNameInput) => { if (internNameInput) { return true } else { return 'Intern name is needed.' } },
         },
         {
             type: 'input',
             message: "What is the Intern's employee ID?",
-            name: "intern ID",
+            name: "id",
             validate: (internIdInput) => { if (internIdInput) { return true } else { return 'Intern ID is needed.' } },
         },
         {
             type: 'input',
             message: "What is the Intern's email address?",
-            name: "intern email",
+            name: "email",
             validate: (internEmailInput) => { if (internEmailInput) { return true } else { return 'Intern email is needed.' } },
         },
         {
             type: 'input',
-            message: "What is the Intern's office number",
-            name: "intern office number",
-            validate: (internONumberInput) => { if (internONumberInput) { return true } else { return 'Intern office number is needed.' } },
+            message: "What is the Intern's school",
+            name: "school",
+            validate: (internSchoolInput) => { if (internSchoolInput) { return true } else { return 'Intern office number is needed.' } },
         },
-    ])
+    ]).then(({ name, id, email, school }) => {
+        const newIntern = new Intern(name, id, email, school)
+        teamArray.push(newIntern)
+
+    })
 }
