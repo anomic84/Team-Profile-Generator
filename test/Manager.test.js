@@ -1,5 +1,5 @@
-const Manager = require('./lib/Manager');
-const Employee = require('./lib/Employee');
+const Manager = require('../lib/Manager');
+const Employee = require('../lib/Employee');
 
 //testing manager obj
 test("Should set the office number from constructor", () => {
@@ -12,7 +12,7 @@ test("Should set the office number from constructor", () => {
 
 //Get role
 test('Should getRole of employee to be Manager ', () => {
-    testRole = "Manager";
+    const testRole = "Manager";
     const emp = new Manager('Spencer', 42, 'Spencer@gmail.com', 24);
 
     expect(emp.getRole()).toBe("Manager");

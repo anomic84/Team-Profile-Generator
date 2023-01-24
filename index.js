@@ -6,6 +6,7 @@ const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern")
 const Employee = require("./lib/employee")
+const generateTeam = require('./generateHtml');
 
 let teamArray = [];
 
@@ -127,7 +128,7 @@ const createTeam = () => {
                 addIntern()
                 break;
             default:
-                fs.writeFileSync('index.html', generateTeam(teamArray))
+                fs.writeFileSync('./dist/index.html', generateTeam(teamArray))
         }
     })
 }
