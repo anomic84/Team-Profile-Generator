@@ -9,7 +9,7 @@ const Employee = require("./lib/employee")
 
 let teamArray = [];
 
-// inq prompts for manager
+// inq prompts for manager, at bottomw we start with this function and than leads to other team members until user quits
 const addManager = () => {
     inquirer.prompt([
         {
@@ -39,10 +39,11 @@ const addManager = () => {
     ]).then(({ name, id, email, officeNumber }) => {
         const newManager = new Manager(name, id, email, officeNumber)
         teamArray.push(newManager)
-
+        createTeam()
     })
 }
 
+//inq prompts for Engineer
 const addEngineer = () => {
     inquirer.prompt([
         {
@@ -72,10 +73,11 @@ const addEngineer = () => {
     ]).then(({ name, id, email, github }) => {
         const newEngineer = new Engineer(name, id, email, github)
         teamArray.push(newEngineer)
-
+        createTeam()
     })
 }
 
+//inq prompts for Intern
 const addIntern = () => {
     inquirer.prompt([
         {
@@ -105,6 +107,30 @@ const addIntern = () => {
     ]).then(({ name, id, email, school }) => {
         const newIntern = new Intern(name, id, email, school)
         teamArray.push(newIntern)
-
+        createTeam()
     })
 }
+
+//function inbetween each "addRole" function to allow user to choose who to add, or end and move on to generateTeam 
+const createTeam = () => {
+    inquirer.prompt([{
+        type: 'list',
+        name: 'selectRole',
+        message: 'What is the employee\'s role?',
+        choices: ['Engineer', 'Intern', 'That\'s all']
+    }]).then(answers => {
+        switch (answers.selectRole) {
+            case 'Engineer':
+                addEngineer()
+                break;
+            case 'Intern':
+                addIntern()
+                break;
+            default:
+                fs.writeFileSync('index.html', generateTeam(teamArray))
+        }
+    })
+}
+
+//starts the whole program when node index.js is entered
+addManager();
