@@ -4,7 +4,7 @@
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Demo Video](#Video)
-  - [Links](#links)
+  - [Install](#Install)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -33,9 +33,21 @@ SO THAT I have quick access to their emails and GitHub profiles
 ​
 ![Video] Here's my video: https://youtu.be/CfO4pGdzDqw
 
-### Links
+### Install
 ​
-- Live Site URL: [https://your-live-site-url.com]
+- Clone this repo into your local machine
+- Install Node.js, Jest, and Inquirer
+
+```Node
+npm init
+npm i
+```
+```Jest
+npm install --save-dev jest
+```
+```Inquirer
+npm i inquirer@8.2.4
+```
 ​
 ## My process
 ### Built with
