@@ -27,7 +27,7 @@ SO THAT I have quick access to their emails and GitHub profiles
 ​
 ### Screenshot
 ​
-![Screenshot](https://imgur.com/a/O4i8K1L)
+![Screenshot][https://imgur.com/a/O4i8K1L]
 
 ### Video
 ​
