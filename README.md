@@ -34,7 +34,7 @@ SO THAT I have quick access to their emails and GitHub profiles
 ![Video] Here's my video: https://youtu.be/CfO4pGdzDqw
 
 ### Install
-​
+
 - Clone this repo into your local machine
 - Install Node.js, Jest, and Inquirer
 
@@ -47,6 +47,9 @@ npm install --save-dev jest
 ```
 ```Inquirer
 npm i inquirer@8.2.4
+```
+```Run the application
+node index.js
 ```
 ​
 ## My process
