@@ -5,6 +5,7 @@
   - [Screenshot](#screenshot)
   - [Demo Video](#Video)
   - [Install](#Install)
+  - [Run the App](#Run-the-Application)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -48,6 +49,7 @@ npm install --save-dev jest
 ```Inquirer
 npm i inquirer@8.2.4
 ```
+### Run the Application
 ```Run the application
 node index.js
 ```
